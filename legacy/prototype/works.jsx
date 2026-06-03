@@ -1,0 +1,609 @@
+// Catalogue of works.
+// Each entry holds bilingual fields, image path, true pixel aspect (w/h from
+// the actual photo), and a two-tone palette used as fallback if the image
+// fails to load.
+
+const WORKS = [
+  // ───── Architecture ─────
+  {
+    id: "ott-01",
+    title: { tr: "Eski Köşk", en: "Old Mansion" },
+    year: 2024,
+    medium: { tr: "Suluboya, kâğıt", en: "Watercolor on paper" },
+    dimensions: "42 × 56 cm",
+    theme: "architecture",
+    mediumKey: "watercolor",
+    w: 578, h: 416,
+    image: "assets/works/ott-01.png",
+    note: {
+      tr: "Çamlıca yamacında, gün batarken çizilmiş bir Osmanlı konağı.",
+      en: "An Ottoman mansion on Çamlıca slope, drawn at dusk."
+    },
+    ph: { a: "#C8945A", b: "#7A4E2C", c: "#1F2742", angle: "94deg" }
+  },
+  {
+    id: "ott-02",
+    title: { tr: "Korint Başlığı", en: "Corinthian Capital" },
+    year: 2023,
+    medium: { tr: "Grafit, kâğıt", en: "Graphite on paper" },
+    dimensions: "29 × 42 cm",
+    theme: "architecture",
+    mediumKey: "drawing",
+    w: 569, h: 795,
+    image: "assets/works/ott-02.png",
+    note: {
+      tr: "Bir başlığın akantus yapraklarından kalan tortular.",
+      en: "Sediment of acanthus leaves on a Corinthian capital."
+    },
+    ph: { a: "#E8E1D2", b: "#C7BDA8", c: "#5C5446", angle: "90deg" }
+  },
+  {
+    id: "ott-03",
+    title: { tr: "Barok Kilise", en: "Baroque Church" },
+    year: 2024,
+    medium: { tr: "Kömür ve suluboya", en: "Charcoal and watercolor" },
+    dimensions: "50 × 70 cm",
+    theme: "architecture",
+    mediumKey: "watercolor",
+    w: 744, h: 554,
+    image: "assets/works/ott-03.png",
+    note: {
+      tr: "Galata yokuşunda, bir cephe gravürü.",
+      en: "A facade etching from the Galata slope."
+    },
+    ph: { a: "#2A241F", b: "#0F0D0B", c: "#6A5740", angle: "92deg" }
+  },
+  {
+    id: "ott-04",
+    title: { tr: "Sokak Cephesi", en: "Street Facade" },
+    year: 2023,
+    medium: { tr: "Suluboya ve mürekkep", en: "Watercolor and ink" },
+    dimensions: "56 × 38 cm",
+    theme: "architecture",
+    mediumKey: "watercolor",
+    w: 741, h: 514,
+    image: "assets/works/ott-04.png",
+    note: {
+      tr: "Sıcak yıkamalar, indigo gökyüzüne karşı.",
+      en: "Warm washes against an indigo sky."
+    },
+    ph: { a: "#D9A56B", b: "#2E3B66", c: "#88684A", angle: "96deg" }
+  },
+  {
+    id: "ott-05",
+    title: { tr: "Kule ve Kuşlar", en: "Tower and Doves" },
+    year: 2024,
+    medium: { tr: "Suluboya, kâğıt", en: "Watercolor on paper" },
+    dimensions: "38 × 56 cm",
+    theme: "architecture",
+    mediumKey: "watercolor",
+    w: 575, h: 803,
+    image: "assets/works/ott-05.png",
+    note: {
+      tr: "Bir kulenin etrafında dönen güvercinler.",
+      en: "Doves circling a tower."
+    },
+    ph: { a: "#7AB6D8", b: "#E8C56A", c: "#34495E", angle: "92deg" }
+  },
+  {
+    id: "ott-06",
+    title: { tr: "Barok Kapı", en: "Baroque Doorway" },
+    year: 2023,
+    medium: { tr: "Suluboya, kâğıt", en: "Watercolor on paper" },
+    dimensions: "56 × 42 cm",
+    theme: "architecture",
+    mediumKey: "watercolor",
+    w: 744, h: 554,
+    image: "assets/works/ott-06.png",
+    note: {
+      tr: "Ayrıntıların çürümeye yenildiği bir cephe.",
+      en: "A facade losing its detail to decay."
+    },
+    ph: { a: "#C49070", b: "#5A4633", c: "#8E6A4C", angle: "94deg" }
+  },
+  {
+    id: "ott-07",
+    title: { tr: "Süslü Cephe", en: "Ornate Facade" },
+    year: 2024,
+    medium: { tr: "Akrilik, tuval", en: "Acrylic on canvas" },
+    dimensions: "60 × 80 cm",
+    theme: "architecture",
+    mediumKey: "acrylic",
+    w: 578, h: 807,
+    image: "assets/works/ott-07.png",
+    note: {
+      tr: "Osmanlı tonlarında, mavi bir gecenin ortasında.",
+      en: "In Ottoman hues, in the middle of a blue night."
+    },
+    ph: { a: "#D9A857", b: "#1F3460", c: "#7A572A", angle: "92deg" }
+  },
+
+  // ───── Nature & florals ─────
+  {
+    id: "flo-01",
+    title: { tr: "Güller ve Kafatası", en: "Roses and Skull" },
+    year: 2024,
+    medium: { tr: "Karışık teknik, kâğıt", en: "Mixed media on paper" },
+    dimensions: "50 × 50 cm",
+    theme: "nature",
+    mediumKey: "mixed",
+    w: 579, h: 791,
+    image: "assets/works/flo-01.png",
+    note: {
+      tr: "Memento mori; bir buketin altında kemik.",
+      en: "Memento mori — bone beneath a bouquet."
+    },
+    ph: { a: "#8E1F2A", b: "#F0E0D2", c: "#2A1418", angle: "88deg" }
+  },
+  {
+    id: "flo-02",
+    title: { tr: "Tavus Kuşu", en: "Peacock" },
+    year: 2024,
+    medium: { tr: "Akrilik, tuval", en: "Acrylic on canvas" },
+    dimensions: "60 × 80 cm",
+    theme: "nature",
+    mediumKey: "acrylic",
+    w: 578, h: 807,
+    image: "assets/works/flo-02.png",
+    note: {
+      tr: "Mücevher tonlarında bir kuyruk açılışı.",
+      en: "A jewel-toned tail, just unfurling."
+    },
+    ph: { a: "#0E4A52", b: "#C58A2C", c: "#0A1E2B", angle: "92deg" }
+  },
+  {
+    id: "flo-03",
+    title: { tr: "Ayçiçekleri", en: "Sunflowers" },
+    year: 2023,
+    medium: { tr: "Karışık teknik, kâğıt", en: "Mixed media on paper" },
+    dimensions: "38 × 48 cm",
+    theme: "nature",
+    mediumKey: "mixed",
+    w: 572, h: 778,
+    image: "assets/works/flo-03.png",
+    note: {
+      tr: "Sonbahar ışığı altında, sararmış bir buket.",
+      en: "A yellowing bouquet under autumn light."
+    },
+    ph: { a: "#E2A23A", b: "#8C5F1F", c: "#3A2E1A", angle: "90deg" }
+  },
+  {
+    id: "flo-04",
+    title: { tr: "Ördekler", en: "Ducks" },
+    year: 2024,
+    medium: { tr: "Akrilik, tuval", en: "Acrylic on canvas" },
+    dimensions: "50 × 50 cm",
+    theme: "nature",
+    mediumKey: "acrylic",
+    w: 736, h: 736,
+    image: "assets/works/flo-04.png",
+    note: {
+      tr: "Çayırda iki ördek; nadir bir sabah.",
+      en: "Two ducks in the grass; a rare morning."
+    },
+    ph: { a: "#7E8C7A", b: "#2C3A36", c: "#C4BCA8", angle: "94deg" }
+  },
+  {
+    id: "flo-05",
+    title: { tr: "Kafatası Etüdü", en: "Skull Study" },
+    year: 2024,
+    medium: { tr: "Grafit, kâğıt", en: "Graphite on paper" },
+    dimensions: "29 × 21 cm",
+    theme: "nature",
+    mediumKey: "drawing",
+    w: 744, h: 554,
+    image: "assets/works/flo-05.png",
+    note: {
+      tr: "'Güller ve Kafatası' için hazırlık çalışması.",
+      en: "Preparatory study for 'Roses and Skull'."
+    },
+    ph: { a: "#D8CFBC", b: "#8E8270", c: "#3A322A", angle: "92deg" }
+  },
+  {
+    id: "flo-06",
+    title: { tr: "Gül Buketi", en: "Rose Bouquet" },
+    year: 2023,
+    medium: { tr: "Suluboya, kâğıt", en: "Watercolor on paper" },
+    dimensions: "30 × 42 cm",
+    theme: "nature",
+    mediumKey: "watercolor",
+    w: 538, h: 785,
+    image: "assets/works/flo-06.png",
+    note: {
+      tr: "Bir buket gül; nazikçe solmakta.",
+      en: "A bouquet of roses; gently fading."
+    },
+    ph: { a: "#D88AA2", b: "#A6CB8E", c: "#5C3E58", angle: "92deg" }
+  },
+
+  // ───── Marine / fauna / figure ─────
+  {
+    id: "mar-01",
+    title: { tr: "Mor Ahtapot", en: "Violet Octopus" },
+    year: 2024,
+    medium: { tr: "Akrilik, tuval", en: "Acrylic on canvas" },
+    dimensions: "70 × 70 cm",
+    theme: "figure",
+    mediumKey: "acrylic",
+    w: 802, h: 555,
+    image: "assets/works/mar-01.png",
+    note: {
+      tr: "Mor ve pembede sekiz kol, derin maviye karşı.",
+      en: "Eight arms in violet and pink, against deep blue."
+    },
+    ph: { a: "#7A2E78", b: "#D86B92", c: "#1C0E2A", angle: "92deg" }
+  },
+  {
+    id: "mar-02",
+    title: { tr: "Uyuyan Kedi", en: "Sleeping Cat" },
+    year: 2023,
+    medium: { tr: "Yağlıboya, panel", en: "Oil on panel" },
+    dimensions: "40 × 50 cm",
+    theme: "figure",
+    mediumKey: "acrylic",
+    w: 629, h: 446,
+    image: "assets/works/mar-02.png",
+    note: {
+      tr: "Bir kraliyet portresi gibi çerçevelenmiş.",
+      en: "Framed like a royal portrait."
+    },
+    ph: { a: "#7A6852", b: "#B8A287", c: "#2A2018", angle: "90deg" }
+  },
+  {
+    id: "mar-03",
+    title: { tr: "Mürekkep Balığı", en: "Cuttlefish" },
+    year: 2024,
+    medium: { tr: "Mürekkep, kâğıt", en: "Ink on paper" },
+    dimensions: "42 × 56 cm",
+    theme: "figure",
+    mediumKey: "drawing",
+    w: 594, h: 791,
+    image: "assets/works/mar-03.png",
+    note: {
+      tr: "Mürekkep ve suluboyada bir çağrı.",
+      en: "A summoning, in ink and watercolor."
+    },
+    ph: { a: "#3A2B58", b: "#9B7BB8", c: "#120A20", angle: "94deg" }
+  },
+  {
+    id: "mar-04",
+    title: { tr: "Mavi Ahtapot Etüdü", en: "Blue Octopus Study" },
+    year: 2023,
+    medium: { tr: "Yağlıboya etüt", en: "Oil study" },
+    dimensions: "38 × 56 cm",
+    theme: "figure",
+    mediumKey: "mixed",
+    w: 568, h: 784,
+    image: "assets/works/mar-04.png",
+    note: {
+      tr: "Sekiz kolun, kalın darbelerle ilk taslağı.",
+      en: "First sketch of eight arms, in thick strokes."
+    },
+    ph: { a: "#A6361E", b: "#1A3A56", c: "#0A1E2B", angle: "94deg" }
+  },
+  {
+    id: "mar-05",
+    title: { tr: "Mor Ahtapot Etüdü", en: "Violet Octopus Study" },
+    year: 2023,
+    medium: { tr: "Suluboya, kâğıt", en: "Watercolor on paper" },
+    dimensions: "29 × 21 cm",
+    theme: "figure",
+    mediumKey: "watercolor",
+    w: 744, h: 554,
+    image: "assets/works/mar-05.png",
+    note: {
+      tr: "Yumuşak yıkamalarda hareket çalışması.",
+      en: "Movement study in soft washes."
+    },
+    ph: { a: "#A07AC4", b: "#E5D2E0", c: "#5C3A78", angle: "92deg" }
+  },
+
+  // ───── Abstract ─────
+  {
+    id: "abs-01",
+    title: { tr: "Patlama I", en: "Burst I" },
+    year: 2024,
+    medium: { tr: "Karışık teknik, kâğıt", en: "Mixed media on paper" },
+    dimensions: "70 × 70 cm",
+    theme: "abstract",
+    mediumKey: "mixed",
+    w: 596, h: 800,
+    image: "assets/works/abs-01.png",
+    note: {
+      tr: "Kırmızı, mavi ve altın sıçramaları.",
+      en: "Splatters of red, blue, and gold."
+    },
+    ph: { a: "#B81A1A", b: "#1A3FB8", c: "#C8A23A", angle: "112deg" }
+  },
+  {
+    id: "abs-02",
+    title: { tr: "Kozmik Mavi", en: "Cosmic Blue" },
+    year: 2023,
+    medium: { tr: "Akrilik, tuval", en: "Acrylic on canvas" },
+    dimensions: "60 × 75 cm",
+    theme: "abstract",
+    mediumKey: "acrylic",
+    w: 559, h: 791,
+    image: "assets/works/abs-02.png",
+    note: {
+      tr: "Derin bir mavinin içinde kaybolmak.",
+      en: "Disappearing inside a deep blue."
+    },
+    ph: { a: "#0C1F4A", b: "#1C3F8B", c: "#050A1C", angle: "92deg" }
+  },
+  {
+    id: "abs-03",
+    title: { tr: "Morluk", en: "Bruise" },
+    year: 2024,
+    medium: { tr: "Karışık teknik, kâğıt", en: "Mixed media on paper" },
+    dimensions: "50 × 70 cm",
+    theme: "abstract",
+    mediumKey: "mixed",
+    w: 578, h: 807,
+    image: "assets/works/abs-03.png",
+    note: {
+      tr: "Çürük menekşeler; iyileşen bir leke.",
+      en: "Bruised violets; a stain that heals."
+    },
+    ph: { a: "#3E1C3A", b: "#7A2E58", c: "#1A0C18", angle: "92deg" }
+  },
+  {
+    id: "abs-04",
+    title: { tr: "Mavi Etüt I", en: "Blue Study I" },
+    year: 2023,
+    medium: { tr: "Karışık teknik, kâğıt", en: "Mixed media on paper" },
+    dimensions: "29 × 42 cm",
+    theme: "abstract",
+    mediumKey: "mixed",
+    w: 488, h: 726,
+    image: "assets/works/abs-04.png",
+    note: {
+      tr: "Bir yüzün gölgesinde mavi.",
+      en: "Blue in the shadow of a face."
+    },
+    ph: { a: "#1A2A4A", b: "#3E4F6E", c: "#0A0F1C", angle: "92deg" }
+  },
+  {
+    id: "abs-05",
+    title: { tr: "Mavi Etüt II", en: "Blue Study II" },
+    year: 2023,
+    medium: { tr: "Karışık teknik, kâğıt", en: "Mixed media on paper" },
+    dimensions: "29 × 42 cm",
+    theme: "abstract",
+    mediumKey: "mixed",
+    w: 600, h: 801,
+    image: "assets/works/abs-05.png",
+    note: {
+      tr: "Aynı odanın başka bir köşesi.",
+      en: "Another corner of the same room."
+    },
+    ph: { a: "#162038", b: "#3A4E70", c: "#080C18", angle: "94deg" }
+  },
+  {
+    id: "abs-06",
+    title: { tr: "Mavi Etüt III", en: "Blue Study III" },
+    year: 2023,
+    medium: { tr: "Karışık teknik, kâğıt", en: "Mixed media on paper" },
+    dimensions: "29 × 42 cm",
+    theme: "abstract",
+    mediumKey: "mixed",
+    w: 561, h: 769,
+    image: "assets/works/abs-06.png",
+    note: {
+      tr: "Gece, dışarıdan içeri sızan.",
+      en: "Night, seeping in from outside."
+    },
+    ph: { a: "#0E1828", b: "#2A3A58", c: "#04080F", angle: "90deg" }
+  },
+  {
+    id: "abs-07",
+    title: { tr: "Kırmızı Deniz, Mavi Gök", en: "Red Sea, Blue Sky" },
+    year: 2024,
+    medium: { tr: "Akrilik, tuval", en: "Acrylic on canvas" },
+    dimensions: "50 × 70 cm",
+    theme: "abstract",
+    mediumKey: "acrylic",
+    w: 594, h: 791,
+    image: "assets/works/abs-07.png",
+    note: {
+      tr: "İki bantın çarpıştığı bir ufuk.",
+      en: "A horizon where two bands collide."
+    },
+    ph: { a: "#D44A2C", b: "#1F4F8B", c: "#5C2418", angle: "92deg" }
+  },
+  {
+    id: "abs-08",
+    title: { tr: "Orman Patlaması", en: "Forest Burst" },
+    year: 2024,
+    medium: { tr: "Karışık teknik, kâğıt", en: "Mixed media on paper" },
+    dimensions: "56 × 76 cm",
+    theme: "abstract",
+    mediumKey: "mixed",
+    w: 579, h: 791,
+    image: "assets/works/abs-08.png",
+    note: {
+      tr: "Renklerin orman olduğu an.",
+      en: "The moment color becomes a forest."
+    },
+    ph: { a: "#E8A53A", b: "#7AB658", c: "#3A2A58", angle: "92deg" }
+  },
+
+  // ───── Dark / surreal ─────
+  {
+    id: "drk-01",
+    title: { tr: "Katedral", en: "Cathedral" },
+    year: 2024,
+    medium: { tr: "Kömür, kâğıt", en: "Charcoal on paper" },
+    dimensions: "50 × 80 cm",
+    theme: "architecture",
+    mediumKey: "drawing",
+    w: 598, h: 809,
+    image: "assets/works/drk-01.png",
+    note: {
+      tr: "Gravür yoğunluğunda detaylı bir iç mekân.",
+      en: "An interior detailed at engraving density."
+    },
+    ph: { a: "#0F0E0C", b: "#3A332C", c: "#1A1714", angle: "94deg" }
+  },
+  {
+    id: "drk-02",
+    title: { tr: "Mistik Figür", en: "Mystic Figure" },
+    year: 2023,
+    medium: { tr: "Karışık teknik, kâğıt", en: "Mixed media on paper" },
+    dimensions: "32 × 32 cm",
+    theme: "figure",
+    mediumKey: "mixed",
+    w: 673, h: 679,
+    image: "assets/works/drk-02.png",
+    note: {
+      tr: "Yüzü olmayan bir aziz.",
+      en: "A saint without a face."
+    },
+    ph: { a: "#1F1B16", b: "#5C5246", c: "#0A0907", angle: "92deg" }
+  },
+  {
+    id: "drk-03",
+    title: { tr: "Gravür Çalışması", en: "Engraving Study" },
+    year: 2024,
+    medium: { tr: "Mürekkep, kâğıt", en: "Ink on paper" },
+    dimensions: "28 × 38 cm",
+    theme: "figure",
+    mediumKey: "drawing",
+    w: 594, h: 791,
+    image: "assets/works/drk-03.png",
+    note: {
+      tr: "Eski bir baskı plakası için etüt.",
+      en: "Study for an old printing plate."
+    },
+    ph: { a: "#E6DFCF", b: "#1A1612", c: "#7A6E5C", angle: "90deg" }
+  },
+  {
+    id: "drk-04",
+    title: { tr: "Pembe Gök Katedrali", en: "Cathedral, Pink Sky" },
+    year: 2024,
+    medium: { tr: "Suluboya, kâğıt", en: "Watercolor on paper" },
+    dimensions: "42 × 56 cm",
+    theme: "architecture",
+    mediumKey: "watercolor",
+    w: 588, h: 800,
+    image: "assets/works/drk-04.png",
+    note: {
+      tr: "Akşam ışığında bir cephe.",
+      en: "A facade in evening light."
+    },
+    ph: { a: "#C49AB8", b: "#E5C8B4", c: "#5C4A66", angle: "92deg" }
+  },
+  {
+    id: "drk-05",
+    title: { tr: "Sunak", en: "Altarpiece" },
+    year: 2024,
+    medium: { tr: "Kömür, kâğıt", en: "Charcoal on paper" },
+    dimensions: "50 × 70 cm",
+    theme: "architecture",
+    mediumKey: "drawing",
+    w: 594, h: 791,
+    image: "assets/works/drk-05.png",
+    note: {
+      tr: "Bir sunağın kademeli karanlığı.",
+      en: "The graded darkness of an altar."
+    },
+    ph: { a: "#2A241F", b: "#0F0D0B", c: "#5C5040", angle: "90deg" }
+  },
+];
+
+window.WORKS = WORKS;
+
+// Hero rotation — three signature pieces that crossfade slowly.
+window.HERO_IDS = ["abs-01", "mar-01", "flo-02"];
+
+// Filter sets
+window.MEDIUM_FILTERS = [
+  { key: "all",        tr: "Tümü",        en: "All" },
+  { key: "watercolor", tr: "Suluboya",    en: "Watercolor" },
+  { key: "drawing",    tr: "Çizim",       en: "Drawing" },
+  { key: "acrylic",    tr: "Akrilik",     en: "Acrylic" },
+  { key: "mixed",      tr: "Karışık",     en: "Mixed Media" },
+];
+window.THEME_FILTERS = [
+  { key: "all",          tr: "Tüm Konular",   en: "All Themes" },
+  { key: "architecture", tr: "Mimari",        en: "Architecture" },
+  { key: "nature",       tr: "Doğa",          en: "Nature" },
+  { key: "abstract",     tr: "Soyut",         en: "Abstract" },
+  { key: "figure",       tr: "Figür",         en: "Figure" },
+];
+
+// Roman numeral helper for the "i — xxxi" range label.
+window.toRoman = function (n) {
+  const map = [
+    [1000,"m"],[900,"cm"],[500,"d"],[400,"cd"],[100,"c"],
+    [90,"xc"],[50,"l"],[40,"xl"],[10,"x"],[9,"ix"],
+    [5,"v"],[4,"iv"],[1,"i"],
+  ];
+  let out = "";
+  for (const [v, s] of map) { while (n >= v) { out += s; n -= v; } }
+  return out;
+};
+
+// UI strings
+window.I18N = {
+  tr: {
+    nav: { works: "Eserler", about: "Hakkında", contact: "İletişim" },
+    heroSubtitle: "Ressam — Suluboya, Çizim, Karışık Teknik",
+    heroNote: "İstanbul'da yaşar ve çalışır.",
+    scrollHint: "Eserler",
+    selected: "Seçilmiş Eserler",
+    period: "2023 — 2024",
+    medium: "Medyum",
+    theme: "Konu",
+    aboutTitle: "Hakkında",
+    aboutLead: "Aynı el, çok farklı odalar.",
+    aboutBody: [
+      "Ben Ahmet Emin Turgut. Resim yapıyorum — bazen Osmanlı bir konağın camına vuran akşam ışığını, bazen de bir buketin ardına saklanmış kafatasını.",
+      "Çalışmam suluboya ve grafitin sessizliğinden, akriliğin patlamasına ve kömürün gravür yoğunluğuna kadar uzanır. Bana göre bu çelişki değil, aynı hayalin farklı sesleridir.",
+      "Eserlerim Türkiye ve yurtdışında özel koleksiyonlardadır. Komisyon ve sergi taleplerine açığım."
+    ],
+    portraitTag: "Portre — sanatçı fotoğrafı",
+    contactTitle: "İletişim",
+    contactLead: "Bir eser, bir komisyon, ya da yalnızca selam.",
+    nameField: "Adınız",
+    emailField: "E-posta",
+    msgField: "Mesajınız",
+    send: "Gönder",
+    sent: "Mesaj iletildi. Teşekkür ederim.",
+    footerNote: "Tüm eserler © Ahmet Emin Turgut. İzinsiz kullanılamaz.",
+    close: "Kapat",
+    next: "Sonraki",
+    prev: "Önceki",
+    katalogTag: "Katalog",
+  },
+  en: {
+    nav: { works: "Works", about: "About", contact: "Contact" },
+    heroSubtitle: "Painter — Watercolor, Drawing, Mixed Media",
+    heroNote: "Lives and works in Istanbul.",
+    scrollHint: "Works",
+    selected: "Selected Works",
+    period: "2023 — 2024",
+    medium: "Medium",
+    theme: "Theme",
+    aboutTitle: "About",
+    aboutLead: "One hand, many rooms.",
+    aboutBody: [
+      "I am Ahmet Emin Turgut. I make paintings — sometimes the evening light against the window of an Ottoman house, sometimes the skull hiding behind a bouquet.",
+      "My work moves between the quiet of watercolor and graphite, the burst of acrylic, and the engraving-like density of charcoal. To me these are not contradictions but different voices of the same dream.",
+      "My pieces sit in private collections in Turkey and abroad. I am open to commissions and exhibition inquiries."
+    ],
+    portraitTag: "Portrait — artist photograph",
+    contactTitle: "Contact",
+    contactLead: "A work, a commission, or simply hello.",
+    nameField: "Your name",
+    emailField: "Email",
+    msgField: "Your message",
+    send: "Send",
+    sent: "Message received. Thank you.",
+    footerNote: "All works © Ahmet Emin Turgut. Used without permission is prohibited.",
+    close: "Close",
+    next: "Next",
+    prev: "Previous",
+    katalogTag: "Catalogue",
+  }
+};
