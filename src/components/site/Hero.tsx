@@ -45,14 +45,12 @@ export function Hero({ lang, onJump }: Props) {
 
   return (
     <section
+      className="hero-section"
       style={{
         minHeight: "100vh",
-        padding: "140px 48px 80px",
         maxWidth: 1480,
         margin: "0 auto",
         display: "grid",
-        gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.1fr)",
-        gap: 96,
         alignItems: "center",
       }}
     >
@@ -79,12 +77,13 @@ export function Hero({ lang, onJump }: Props) {
         <h1
           className="serif"
           style={{
-            fontSize: "clamp(56px, 8vw, 124px)",
+            fontSize: "clamp(40px, 11vw, 124px)",
             fontWeight: 400,
             lineHeight: 0.95,
             letterSpacing: "-0.015em",
             margin: 0,
             marginBottom: 28,
+            wordBreak: "break-word",
           }}
         >
           <span className="mask-line">
@@ -108,7 +107,7 @@ export function Hero({ lang, onJump }: Props) {
         <p
           className="serif"
           style={{
-            fontSize: 22,
+            fontSize: "clamp(18px, 4.5vw, 22px)",
             fontStyle: "italic",
             lineHeight: 1.4,
             color: "var(--ink-soft)",

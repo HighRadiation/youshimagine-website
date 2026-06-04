@@ -27,22 +27,21 @@ export function About({ lang }: { lang: Lang }) {
   return (
     <section
       id="about"
+      className="about-section"
       style={{
         background: "var(--paper-2)",
-        padding: "140px 48px",
         borderTop: "1px solid rgba(26,26,26,0.12)",
         borderBottom: "1px solid rgba(26,26,26,0.12)",
       }}
     >
       <div
         ref={ref}
-        className={`reveal-cols ${visible ? "is-visible" : ""}`}
+        className={`reveal-cols about-grid ${visible ? "is-visible" : ""}`}
         style={{
           maxWidth: 1280,
           margin: "0 auto",
           display: "grid",
           gridTemplateColumns: "minmax(0, 0.9fr) minmax(0, 1.3fr)",
-          gap: 96,
           alignItems: "start",
         }}
       >
@@ -56,7 +55,7 @@ export function About({ lang }: { lang: Lang }) {
           <h2
             className="serif"
             style={{
-              fontSize: 44,
+              fontSize: "clamp(30px, 7.5vw, 44px)",
               lineHeight: 1.1,
               fontWeight: 400,
               margin: 0,

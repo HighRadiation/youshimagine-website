@@ -44,15 +44,15 @@ export function Contact({ lang }: { lang: Lang }) {
   return (
     <section
       id="contact"
-      style={{ padding: "140px 48px", maxWidth: 1280, margin: "0 auto" }}
+      className="contact-section"
+      style={{ maxWidth: 1280, margin: "0 auto" }}
     >
       <div
         ref={ref}
-        className={`reveal-cols ${visible ? "is-visible" : ""}`}
+        className={`reveal-cols contact-grid ${visible ? "is-visible" : ""}`}
         style={{
           display: "grid",
           gridTemplateColumns: "minmax(0, 0.9fr) minmax(0, 1.1fr)",
-          gap: 96,
           alignItems: "start",
         }}
       >
@@ -63,7 +63,7 @@ export function Contact({ lang }: { lang: Lang }) {
           <h2
             className="serif"
             style={{
-              fontSize: 44,
+              fontSize: "clamp(30px, 7.5vw, 44px)",
               lineHeight: 1.1,
               fontWeight: 400,
               margin: 0,

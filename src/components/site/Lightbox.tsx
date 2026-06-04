@@ -87,8 +87,8 @@ export function Lightbox({ workId, lang, onClose, onNext, onPrev }: Props) {
       onClick={requestClose}
     >
       <div
+        className="lb-head"
         style={{
-          padding: "22px 48px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -109,14 +109,13 @@ export function Lightbox({ workId, lang, onClose, onNext, onPrev }: Props) {
       </div>
 
       <div
+        className="lb-body"
         style={{
           flex: 1,
           display: "grid",
-          gridTemplateColumns: "minmax(0, 2.4fr) minmax(0, 1fr)",
-          gap: 56,
-          padding: "20px 80px 60px",
           alignItems: "center",
           minHeight: 0,
+          overflowY: "auto",
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -125,16 +124,14 @@ export function Lightbox({ workId, lang, onClose, onNext, onPrev }: Props) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            height: "100%",
             minHeight: 0,
           }}
         >
           <div
+            className="lb-art-frame"
             style={{
-              maxHeight: "78vh",
               aspectRatio: `${work.w} / ${work.h}`,
               width: "auto",
-              height: "78vh",
               maxWidth: "100%",
               position: "relative",
             }}
@@ -165,7 +162,7 @@ export function Lightbox({ workId, lang, onClose, onNext, onPrev }: Props) {
             <h3
               className="serif"
               style={{
-                fontSize: 42,
+                fontSize: "clamp(28px, 7vw, 42px)",
                 lineHeight: 1.05,
                 fontWeight: 400,
                 margin: 0,
@@ -258,8 +255,8 @@ export function Lightbox({ workId, lang, onClose, onNext, onPrev }: Props) {
       </div>
 
       <div
+        className="lb-foot"
         style={{
-          padding: "22px 48px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",

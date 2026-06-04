@@ -20,8 +20,8 @@ export function Footer({ lang }: { lang: Lang }) {
 
   return (
     <footer
+      className="footer-shell"
       style={{
-        padding: "48px 48px 56px",
         borderTop: "1px solid rgba(26,26,26,0.15)",
       }}
     >

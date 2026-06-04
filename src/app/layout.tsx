@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -28,6 +28,12 @@ export const metadata: Metadata = {
   title: "Ahmet Emin Turgut — youshimagine",
   description:
     "Ahmet Emin Turgut — Ressam. Suluboya, çizim, akrilik ve karışık teknik. İstanbul.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#f5f1ea",
 };
 
 export default function RootLayout({

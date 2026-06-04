@@ -37,11 +37,10 @@ function Filters({
   const t = I18N[lang];
   return (
     <div
+      className="filters-grid"
       style={{
         display: "grid",
-        gridTemplateColumns: "auto 1fr auto",
         alignItems: "end",
-        gap: 48,
         marginBottom: 56,
         paddingBottom: 22,
         borderBottom: "1px solid rgba(26,26,26,0.15)",
@@ -77,12 +76,8 @@ function Filters({
         </div>
       </div>
 
-      <div
-        style={{
-          borderLeft: "1px solid rgba(26,26,26,0.15)",
-          paddingLeft: 48,
-        }}
-      >
+      <div className="filters-theme">
+
         <div className="label" style={{ marginBottom: 18 }}>
           {t.theme}
         </div>
@@ -265,8 +260,8 @@ export function WorksSection({ lang, onOpen }: Props) {
   return (
     <section
       id="works"
+      className="works-section"
       style={{
-        padding: "60px 48px 140px",
         maxWidth: 1480,
         margin: "0 auto",
       }}
@@ -277,12 +272,14 @@ export function WorksSection({ lang, onOpen }: Props) {
           alignItems: "baseline",
           justifyContent: "space-between",
           marginBottom: 64,
+          gap: 16,
+          flexWrap: "wrap",
         }}
       >
         <h2
           className="serif"
           style={{
-            fontSize: 56,
+            fontSize: "clamp(36px, 9vw, 56px)",
             fontWeight: 400,
             lineHeight: 1,
             margin: 0,
